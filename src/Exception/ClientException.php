@@ -2,6 +2,6 @@
 
 namespace ItkDev\AzureAdDeltaSync\Exception;
 
-class NetworkException extends \Exception
+class ClientException extends \Exception
 {
 }

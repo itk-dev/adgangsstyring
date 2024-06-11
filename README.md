@@ -2,9 +2,6 @@
 
 Composer package for the Azure AD Delta Sync flow.
 
-## References
-
-* [Microsoft Graph group members](https://docs.microsoft.com/en-us/graph/api/group-list-members?view=graph-rest-1.0&tabs=http)
 
 ## Usage
 
@@ -56,9 +53,6 @@ class SomeHandler implements HandlerInterface
 }
 ```
 
-Be aware that `removeUsersFromDeletionList()` may be called multiple times,
-as we are limited to 100 users per request.
-
 To start the flow provide a HTTP Client that implements
 [PSR-18](https://www.php-fig.org/psr/psr-18/) `CLientInterface`,
 and the required options seen in the example beneath.
@@ -73,10 +67,9 @@ use ItkDev\AzureAdDeltaSync\Controller;
 
 
 $options = [
-  'tenant_id' => 'something.onmicrosoft.com', // Tenant id 
-  'client_id' => 'some_client_id', // Client id assigned by authorizer
-  'client_secret' => 'some_client_secret', // Client password assigned by authorizer
-  'group_id' => 'some_group_id', // Group id provided by authorizer
+  'uri' => 'https://aarhus.../RetrieveProvisioningData/...', // System provisioning uri
+  'security_key' => 'some_security_key', // Provisioning data security key
+  'client_secret' => 'some_client_secret', // System provisioning client secret
 ];
 
 $handler = new SomeHandler();
@@ -91,9 +84,9 @@ $controller->run($handler);
 
 Note that this package does not do the synchronization
 of users, instead it provides a list of all users that
-currently are assigned to the group in question.
+currently has access to the system in question.
 
-Should the specified group contain no users an exception will be
+Should the configured system contain no users an exception will be
 thrown. This is to avoid using systems to be under the impression
 that every single user should be deleted.
 

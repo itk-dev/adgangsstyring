@@ -132,9 +132,9 @@ docker compose run --rm phpfpm composer coding-standards-apply
 #### Markdown files
 
 ```shell
-docker run --rm --volume "$PWD:/md" peterdavehello/markdownlint markdownlint --ignore vendor --ignore LICENSE.md '**/*.md'
+docker run --rm --volume "$PWD:/md" peterdavehello/markdownlint markdownlint '**/*.md'
 ```shell
-docker run --rm --volume "$PWD:/md" peterdavehello/markdownlint markdownlint --ignore vendor --ignore LICENSE.md '**/*.md' --fix
+docker run --rm --volume "$PWD:/md" peterdavehello/markdownlint markdownlint '**/*.md' --fix
 ```
 
 ### GitHub Actions

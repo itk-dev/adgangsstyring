@@ -1,5 +1,3 @@
-# itk-version: 1.0.0
-
 version: "3"
 
 services:
@@ -13,9 +11,3 @@ services:
       - PHP_IDE_CONFIG=serverName=localhost
     volumes:
       - .:/app:delegated
-
-  node:
-    image: node:20
-    volumes:
-      - .:/app:delegated
-    working_dir: /app

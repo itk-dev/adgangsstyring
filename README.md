@@ -2,14 +2,13 @@
 
 Composer package for the Azure AD Delta Sync flow.
 
-
 ## Usage
 
 If you are looking to use this in a Symfony or Drupal project you should use
 either:
 
-* Symfony: [itk-dev/azure-ad-delta-sync-symfony](https://github.com/itk-dev/azure-ad-delta-sync-symfony)
-* Drupal: [itk-dev/azure-ad-delta-sync-drupal](https://github.com/itk-dev/azure-ad-delta-sync-drupal)
+- Symfony: [itk-dev/azure-ad-delta-sync-symfony](https://github.com/itk-dev/azure-ad-delta-sync-symfony)
+- Drupal: [itk-dev/azure-ad-delta-sync-drupal](https://github.com/itk-dev/azure-ad-delta-sync-drupal)
 
 ### Direct installation
 
@@ -25,7 +24,7 @@ To start the flow one needs to call the
 `Controller` `run(HandlerInterface $handler)` command.
 
 Therefore, you must create your own handler that implements
- `HandlerInterface`.
+`HandlerInterface`.
 
 #### Example Usage
 
@@ -132,18 +131,10 @@ docker compose run --rm phpfpm composer coding-standards-apply
 
 #### Markdown files
 
-Check markdown coding standards
-
 ```shell
-docker compose run --rm node yarn install
-docker compose run --rm node yarn coding-standards-check
-```
-
-Apply markdown coding standards
-
+docker run --rm --volume "$PWD:/md" peterdavehello/markdownlint markdownlint --ignore vendor --ignore LICENSE.md '**/*.md'
 ```shell
-docker compose run --rm node yarn install
-docker compose run --rm node yarn coding-standards-apply
+docker run --rm --volume "$PWD:/md" peterdavehello/markdownlint markdownlint --ignore vendor --ignore LICENSE.md '**/*.md' --fix
 ```
 
 ### GitHub Actions

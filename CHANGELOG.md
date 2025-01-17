@@ -2,20 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
-## Added
+## [1.1.0] - 2025-01-17
 
-- Controller
-- StartEvent, CommitEvent and UserDataEvent
-- README
-- LICENSE
-- PHP_CodeSniffer
-- markdownlint
-- This CHANGELOG file to hopefully serve as an evolving example of
-  a standardized open source project CHANGELOG.
-- PHPUnit
-- ControllerTest
+[Unreleased]: https://github.com/itk-dev/azure-ad-delta-sync/compare/1.1.0...HEAD
+[1.1.0]: https://github.com/itk-dev/azure-ad-delta-sync/releases/tag/1.1.0

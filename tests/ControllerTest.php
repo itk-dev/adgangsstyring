@@ -6,7 +6,7 @@ use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use ItkDev\AzureAdDeltaSync\Controller;
 use ItkDev\AzureAdDeltaSync\Exception\DataException;
-use ItkDev\AzureAdDeltaSync\Exception\NetworkException;
+use ItkDev\AzureAdDeltaSync\Exception\ClientException;
 use ItkDev\AzureAdDeltaSync\Exception\TokenException;
 use ItkDev\AzureAdDeltaSync\Handler\HandlerInterface;
 use PHPUnit\Framework\TestCase;
@@ -133,7 +133,7 @@ class ControllerTest extends TestCase
     /**
      * Testing the Controller run() function
      *
-     * Ensure the function does not call removeUsersFromDeletionList twice when theres no users on second list
+     * Ensure the function does not call removeUsersFromDeletionList twice when there are no users on second list
      */
     public function testRunNoUsersOnSecondList()
     {
@@ -256,7 +256,7 @@ class ControllerTest extends TestCase
     public function testRunDataException()
     {
         // Expect DataException to be thrown
-        $this->expectException(NetworkException::class);
+        $this->expectException(ClientException::class);
 
         // Mock response from getBody function call
         $mockStreamInterfacePost = $this->createMock(StreamInterface::class);

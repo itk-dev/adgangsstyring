@@ -109,4 +109,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Markdown lint
-        run: docker run --rm --volume "$PWD:/md" peterdavehello/markdownlint markdownlint --ignore vendor '**/*.md'
+        run: docker run --rm --volume "$PWD:/md" itkdev/markdownlint '**/*.md'

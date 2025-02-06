@@ -133,7 +133,6 @@ docker compose run --rm phpfpm composer coding-standards-apply
 
 ```shell
 docker run --rm --volume "$PWD:/md" itkdev/markdownlint '**/*.md'
-```shell
 docker run --rm --volume "$PWD:/md" itkdev/markdownlint '**/*.md' --fix
 ```
 
